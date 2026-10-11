@@ -24,10 +24,12 @@ html[data-theme="light"] {
   --chip-2: #D1FAE5;
   --chip-3: #A7F3D0;
   --contour: #0F172A;
-  --road-minor: #9AA3AD;
-  --road-minor-op: 0.34;
-  --road-art: #8B95A1;
-  --road-art-op: 0.5;
+  --map-river: #8CA0B5;
+  --map-river-op: 0.15;
+  --map-arterial: #9AA3AD;
+  --map-arterial-op: 0.15;
+  --map-minor: #9AA3AD;
+  --map-minor-op: 0.09;
   --spec-hi: rgb(255 255 255 / 0.65);
   color-scheme: light;
 }
@@ -47,10 +49,12 @@ html[data-theme="dark"] {
   --chip-2: #16332A;
   --chip-3: #1C4434;
   --contour: #E9F1EC;
-  --road-minor: #3A4550;
-  --road-minor-op: 0.6;
-  --road-art: #4A5865;
-  --road-art-op: 0.65;
+  --map-river: #5B6B7C;
+  --map-river-op: 0.18;
+  --map-arterial: #4A5865;
+  --map-arterial-op: 0.22;
+  --map-minor: #3A4550;
+  --map-minor-op: 0.16;
   --spec-hi: rgb(255 255 255 / 0.16);
   --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.35);
   color-scheme: dark;
@@ -60,24 +64,21 @@ html[data-theme="dark"] {
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 104px; }
 
-/* Fixed GIS road-network backdrop — sits above body bg, below all content */
-#roadNetwork {
-  position: fixed; inset: 0; width: 100vw; height: 100vh;
-  z-index: 0; pointer-events: none;
+/* Fixed real-street map backdrop (downtown Baton Rouge) — whisper-faint, whitespace only */
+.map-backdrop {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  -webkit-mask-image: radial-gradient(115% 85% at 50% 32%, #000 22%, transparent 76%);
+  mask-image: radial-gradient(115% 85% at 50% 32%, #000 22%, transparent 76%);
 }
+.map-backdrop svg { display: block; width: 100%; height: 100%; }
 .site-header, main, .site-footer { position: relative; z-index: 1; }
-.rd-minor path { fill: none; stroke: var(--road-minor); stroke-width: 1; opacity: var(--road-minor-op); }
-.rd-art path { fill: none; stroke: var(--road-art); stroke-width: 2.4; opacity: var(--road-art-op); stroke-linecap: round; }
-.rd-art .rd-hwy { stroke-width: 3.2; }
-.rd-nodes circle { fill: var(--road-art); opacity: var(--road-art-op); }
-.route {
-  fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round;
-  stroke-dasharray: 1 10; opacity: 0.55;
-  animation: routeFlow 34s linear infinite;
+.br-minor path { fill: none; stroke: var(--map-minor); stroke-width: 4.5; opacity: var(--map-minor-op); }
+.br-arterial path { fill: none; stroke: var(--map-arterial); stroke-width: 8; opacity: var(--map-arterial-op); stroke-linecap: round; }
+.br-river path {
+  fill: none; stroke: var(--map-river); stroke-width: 95;
+  opacity: var(--map-river-op); stroke-linecap: round;
+  filter: blur(7px);
 }
-.route.r2 { animation-duration: 44s; animation-direction: reverse; }
-.route.r3 { animation-duration: 28s; opacity: 0.42; }
-@keyframes routeFlow { to { stroke-dashoffset: -220; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -447,6 +448,5 @@ img[data-placeholder="true"] { opacity: 0.92; }
   html[data-theme="light"] .btn-primary { background: rgb(209 250 229 / 0.97); }
   html[data-theme="dark"] .btn-primary { background: rgb(14 42 32 / 0.97); }
   .glass::before { display: none; }
-  #roadNetwork { opacity: 0.4; }
-  .route { animation: none; }
+  .map-backdrop { display: none; }
 }

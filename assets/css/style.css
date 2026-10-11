@@ -30,7 +30,7 @@ html[data-theme="light"] {
   --map-arterial-op: 0.30;
   --map-minor: #9AA3AD;
   --map-minor-op: 0.17;
-  --map-interstate: #C0453D;
+  --map-interstate: #9AA3AD;
   --map-interstate-op: 0.42;
   --spec-hi: rgb(255 255 255 / 0.65);
   color-scheme: light;
@@ -57,7 +57,7 @@ html[data-theme="dark"] {
   --map-arterial-op: 0.34;
   --map-minor: #3A4550;
   --map-minor-op: 0.26;
-  --map-interstate: #D96A5E;
+  --map-interstate: #4A5865;
   --map-interstate-op: 0.45;
   --spec-hi: rgb(255 255 255 / 0.16);
   --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.35);

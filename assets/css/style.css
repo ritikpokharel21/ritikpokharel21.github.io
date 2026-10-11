@@ -25,11 +25,13 @@ html[data-theme="light"] {
   --chip-3: #A7F3D0;
   --contour: #0F172A;
   --map-river: #8CA0B5;
-  --map-river-op: 0.15;
+  --map-river-op: 0.26;
   --map-arterial: #9AA3AD;
-  --map-arterial-op: 0.15;
+  --map-arterial-op: 0.30;
   --map-minor: #9AA3AD;
-  --map-minor-op: 0.09;
+  --map-minor-op: 0.17;
+  --map-interstate: #C0453D;
+  --map-interstate-op: 0.42;
   --spec-hi: rgb(255 255 255 / 0.65);
   color-scheme: light;
 }
@@ -50,11 +52,13 @@ html[data-theme="dark"] {
   --chip-3: #1C4434;
   --contour: #E9F1EC;
   --map-river: #5B6B7C;
-  --map-river-op: 0.18;
+  --map-river-op: 0.30;
   --map-arterial: #4A5865;
-  --map-arterial-op: 0.22;
+  --map-arterial-op: 0.34;
   --map-minor: #3A4550;
-  --map-minor-op: 0.16;
+  --map-minor-op: 0.26;
+  --map-interstate: #D96A5E;
+  --map-interstate-op: 0.45;
   --spec-hi: rgb(255 255 255 / 0.16);
   --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.35);
   color-scheme: dark;
@@ -74,6 +78,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 104px; }
 .site-header, main, .site-footer { position: relative; z-index: 1; }
 .br-minor path { fill: none; stroke: var(--map-minor); stroke-width: 4.5; opacity: var(--map-minor-op); }
 .br-arterial path { fill: none; stroke: var(--map-arterial); stroke-width: 8; opacity: var(--map-arterial-op); stroke-linecap: round; }
+.br-interstate path { fill: none; stroke: var(--map-interstate); stroke-width: 10; opacity: var(--map-interstate-op); stroke-linecap: round; }
 .br-river path {
   fill: none; stroke: var(--map-river); stroke-width: 95;
   opacity: var(--map-river-op); stroke-linecap: round;

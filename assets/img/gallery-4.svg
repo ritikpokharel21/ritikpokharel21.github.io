@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" data-placeholder="true" role="img" aria-label="Placeholder for UAV flight operations photo">
+  <!-- PLACEHOLDER: replace with a real UAV / field operations photo (800x600 or 4:3) -->
+  <rect width="800" height="600" fill="#DCE8EF"/>
+  <g fill="none" stroke="#94A3B8" stroke-width="3" opacity="0.6">
+    <path d="M-20,420 C150,380 300,460 480,420 C620,390 700,440 820,410"/>
+    <path d="M-20,480 C150,440 300,520 480,480 C620,450 700,500 820,470"/>
+  </g>
+  <g transform="translate(400,230)">
+    <rect x="-70" y="-14" width="140" height="28" rx="10" fill="#475569"/>
+    <g stroke="#475569" stroke-width="8" stroke-linecap="round">
+      <line x1="-110" y1="-40" x2="-50" y2="-14"/><line x1="110" y1="-40" x2="50" y2="-14"/>
+      <line x1="-110" y1="40" x2="-50" y2="14"/><line x1="110" y1="40" x2="50" y2="14"/>
+    </g>
+    <g fill="none" stroke="#0F172A" stroke-width="5">
+      <circle cx="-118" cy="-44" r="26"/><circle cx="118" cy="-44" r="26"/>
+      <circle cx="-118" cy="44" r="26"/><circle cx="118" cy="44" r="26"/>
+    </g>
+    <circle cx="0" cy="0" r="10" fill="#059669"/>
+  </g>
+  <text x="400" y="540" text-anchor="middle" font-family="monospace" font-size="20" fill="#64748B" letter-spacing="4">UAV OPS — REPLACE WITH PHOTO</text>
+</svg>

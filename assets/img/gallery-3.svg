@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" data-placeholder="true" role="img" aria-label="Placeholder for soil fertility mapping visual">
+  <!-- PLACEHOLDER: replace with a real soil fertility map figure (800x450 or 16:9) -->
+  <rect width="800" height="450" fill="#F0EBE2"/>
+  <g opacity="0.85">
+    <path d="M120,80 L300,80 L280,220 L100,220 Z" fill="#FDE68A"/>
+    <path d="M300,80 L480,80 L500,220 L280,220 Z" fill="#FCD34D"/>
+    <path d="M480,80 L660,80 L680,220 L500,220 Z" fill="#F59E0B"/>
+    <path d="M100,220 L280,220 L260,360 L80,360 Z" fill="#FBBF24"/>
+    <path d="M280,220 L500,220 L520,360 L260,360 Z" fill="#F59E0B"/>
+    <path d="M500,220 L680,220 L700,360 L520,360 Z" fill="#D97706"/>
+  </g>
+  <g fill="none" stroke="#78350F" stroke-width="1.5" opacity="0.5">
+    <path d="M120,80 L300,80 L280,220 L100,220 Z M300,80 L480,80 L500,220 L280,220 Z M480,80 L660,80 L680,220 L500,220 Z"/>
+    <path d="M100,220 L280,220 L260,360 L80,360 Z M280,220 L500,220 L520,360 L260,360 Z M500,220 L680,220 L700,360 L520,360 Z"/>
+  </g>
+  <text x="400" y="410" text-anchor="middle" font-family="monospace" font-size="18" fill="#8A7B63" letter-spacing="4">SOIL MAP — REPLACE WITH IMAGE</text>
+</svg>

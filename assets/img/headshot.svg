@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" data-placeholder="true" role="img" aria-label="Placeholder for professional headshot">
+  <!-- PLACEHOLDER: replace with a real headshot photo (600x600 or larger, square) -->
+  <rect width="600" height="600" fill="#E8EEF2"/>
+  <g fill="none" stroke="#94A3B8" stroke-width="3" opacity="0.6">
+    <path d="M-20,480 C120,440 220,520 340,480 C460,440 540,500 620,470"/>
+    <path d="M-20,530 C120,490 220,570 340,530 C460,490 540,550 620,520"/>
+  </g>
+  <circle cx="300" cy="250" r="110" fill="#CBD5E1"/>
+  <path d="M120,600 C120,470 200,400 300,400 C400,400 480,470 480,600 Z" fill="#CBD5E1"/>
+  <text x="300" y="565" text-anchor="middle" font-family="monospace" font-size="20" fill="#64748B" letter-spacing="4">HEADSHOT</text>
+</svg>

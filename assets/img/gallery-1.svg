@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" data-placeholder="true" role="img" aria-label="Placeholder for rice yield UAV project visual">
+  <!-- PLACEHOLDER: replace with a real orthomosaic / yield-map image (800x450 or 16:9) -->
+  <rect width="800" height="450" fill="#E4EDE6"/>
+  <g opacity="0.55">
+    <rect x="60" y="60" width="680" height="280" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="10 8"/>
+    <g fill="none" stroke="#059669" stroke-width="1.5" opacity="0.7">
+      <line x1="60" y1="200" x2="740" y2="200"/><line x1="60" y1="340" x2="740" y2="340"/>
+      <line x1="230" y1="60" x2="230" y2="340"/><line x1="400" y1="60" x2="400" y2="340"/><line x1="570" y1="60" x2="570" y2="340"/>
+    </g>
+    <path d="M80,300 L250,180 L420,260 L600,120 L720,180" fill="none" stroke="#0F172A" stroke-width="3"/>
+    <g fill="#0F172A">
+      <circle cx="80" cy="300" r="7"/><circle cx="250" cy="180" r="7"/><circle cx="420" cy="260" r="7"/><circle cx="600" cy="120" r="7"/><circle cx="720" cy="180" r="7"/>
+    </g>
+  </g>
+  <text x="400" y="410" text-anchor="middle" font-family="monospace" font-size="18" fill="#64748B" letter-spacing="4">UAV YIELD PROJECT — REPLACE WITH IMAGE</text>
+</svg>

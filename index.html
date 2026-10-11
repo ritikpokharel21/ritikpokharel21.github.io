@@ -1,441 +1,437 @@
-
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ritik Pokharel | CV</title>
-<style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f5fc;
-            color: #333;
-            padding: 40px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h1 {
-            color: #5e2ca5;
-            text-align: center;
-            margin-bottom: 5px;
-        }
-        h2 {
-            color: #ffcc00;
-            border-bottom: 2px solid #5e2ca5;
-            padding-bottom: 5px;
-        }
-        .section {
-            margin-top: 40px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        a {
-            color: #5e2ca5;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .intro {
-            font-size: 1.1em;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .profile-img {
-            display: block;
-            margin: 0 auto 20px;
-            border-radius: 10px;
-            width: 180px;
-        }
-        .social-icons {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 1.5em;
-        }
-        .download-btn {
-            display: block;
-            width: 200px;
-            margin: 30px auto;
-            background-color: #5e2ca5;
-            color: white;
-            padding: 12px;
-            text-align: center;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .download-btn:hover {
-            background-color: #4b218f;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ritik Pokharel — GIS Analyst | Enterprise GIS, UAV Remote Sensing, GeoAI</title>
+  <meta name="description" content="Ritik Pokharel is a GIS Analyst in Baton Rouge, LA delivering production Esri solutions: ArcGIS Enterprise administration, offline field systems, web apps, UAV remote sensing, and machine learning for utilities, municipalities, and research.">
+  <link rel="canonical" href="https://ritikpokharel21.github.io/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B1410" media="(prefers-color-scheme: dark)">
 
-        @media (max-width: 768px) {
-            body {
-                padding: 20px;
-            }
-            .profile-img {
-                width: 120px;
-            }
-            .download-btn {
-                width: 100%;
-                font-size: 1em;
-            }
-            h1 {
-                font-size: 1.4em;
-            }
-            h2 {
-                font-size: 1.2em;
-            }
-            .intro {
-                font-size: 1em;
-            }
-            .social-icons a {
-                font-size: 1.3em;
-            }
-        }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ritik Pokharel — GIS Analyst">
+  <meta property="og:description" content="Enterprise GIS · UAV Remote Sensing · GeoAI. Production Esri solutions for utilities, municipalities, and research.">
+  <meta property="og:url" content="https://ritikpokharel21.github.io/">
+  <meta property="og:site_name" content="Ritik Pokharel — GIS Analyst">
 
-.section {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-    animation-delay: 0.2s;
-}
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ritik Pokharel — GIS Analyst">
+  <meta name="twitter:description" content="Enterprise GIS · UAV Remote Sensing · GeoAI. Based in Baton Rouge, LA.">
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-        body.dark-mode {
-            background-color: #1a1a2e;
-            color: #f0f0f0;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #5e2ca5;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            margin-left: 15px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .dark-toggle {
-            cursor: pointer;
-            font-size: 18px;
-        }
-        .print-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ffcc00;
-            color: #333;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background: white;
-            color: black;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-        .modal-close {
-            float: right;
-            cursor: pointer;
-            font-weight: bold;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-.header-banner {
-    background: linear-gradient(-45deg, #5e2ca5, #ffcc00, #5e2ca5, #ffcc00);
-    background-size: 400% 400%;
-    animation: bannerShift 10s ease infinite;
-    padding: 40px;
-    text-align: center;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-    border-radius: 12px;
-    margin-bottom: 30px;
-}
-@keyframes bannerShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-.section:nth-child(even) {
-    background: linear-gradient(to right, #f0ebff, #fff9e6);
-    padding: 20px;
-    border-radius: 10px;
-}
+  <link rel="stylesheet" href="assets/css/style.css">
 
-.section p, .section ul {
-    color: inherit;
-}
-.dark-mode .section {
-    background: #26264d;
-    color: #f0f0f0;
-}
-.dark-mode .popup-content {
-    background: #2e2e4f;
-    color: #fff;
-}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ritik Pokharel",
+    "jobTitle": "GIS Analyst",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Baton Rouge",
+      "addressRegion": "LA",
+      "addressCountry": "US"
+    },
+    "email": "mailto:ritik.geospatial@gmail.com",
+    "url": "https://ritikpokharel21.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/ritikpokharel",
+      "https://github.com/ritikpokharel21"
+    ],
+    "knowsAbout": ["GIS", "ArcGIS Pro", "ArcGIS Enterprise", "Remote Sensing", "UAV Mapping", "Machine Learning", "GeoAI", "Python", "Spatial Analysis"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-/* Social icon hover effects */
-.social-icons a i:hover {
-    color: #ffcc00;
-    transform: scale(1.2);
-    transition: all 0.3s ease;
-}
-</style>
-<script crossorigin="anonymous" src="https://kit.fontawesome.com/a076d05399.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
-<nav>
-<div><strong>Ritik Pokharel</strong><a href="#" onclick="showPopup('skillsModal')" title="Skills">Skills</a></div>
-<div>
-<a href="#" onclick="showPopup('aboutModal')">About</a>
-<a href="#" onclick="showPopup('researchModal')">Research</a>
-<a href="#projects" onclick="document.getElementById('modal').style.display='flex';">Projects</a>
-<a href="#" onclick="toggleDark()">🌓</a>
-</div>
-</nav>
-<body class="dark-mode">
-<div class="header-banner">Don’t fall in love with your ideas—science isn’t written in stone</div>
-<style>
-.popup-modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    padding: 60px 20px;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
-}
-.popup-content {
-    background-color: #fff;
-    margin: auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 600px;
-    color: #000;
-}
-.close-popup {
-    float: right;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-</style>
-<script>
-function showPopup(id) {
-    document.getElementById(id).style.display = "block";
-}
-function closePopup(id) {
-    document.getElementById(id).style.display = "none";
-}
-</script>
-<img alt="Ritik Pokharel" class="profile-img" src="profile.jpg"/>
-<h1>RITIK POKHAREL</h1>
-<p class="intro">Graduate Research Assistant | Precision Agriculture | Yield Modeling | UAV + Satellite Remote Sensing | Agri-AI Researcher</p>
-<div class="social-icons">
-<a href="https://www.facebook.com/writeek.pokharel.3" target="_blank"><i class="fab fa-facebook-square"></i></a>
-<a href="https://www.linkedin.com/in/ritik-horti/" target="_blank"><i class="fab fa-linkedin"></i></a>
-</div>
-<div class="section">
-<h2>ABOUT</h2>
-<p>I’m Ritik Pokharel, a passionate researcher at the intersection of agriculture, data science, and automation. With a background in agricultural science and a current role as a Graduate Research Assistant at LSU, I specialize in precision agriculture—leveraging remote sensing, AI, and analytics to drive smarter, sustainable farming. I thrive where drones meet data and agronomy meets algorithms.</p>
-</div>
-<div class="section">
-<h2>RESEARCH WORK</h2>
-<ul>
-<li>Soil analysis, GIS-based fertility assessment, and soil mapping of cardamom growing area, Pandam, Ilam, Nepal: https://doi.org/10.22214/IJRASET.2023.51229</li>
-<li>Response of processing techniques on Arabica coffee variety</li>
-<li>Evaluation of soil fertility status of Nepal cardamom field under different shade management</li>
-<li>Factors affecting farm mechanization in Rupandehi district, Nepal</li>
-<li>Crop modeling and yield prediction in rice and in-season simulation</li>
-<li>Nitrogen optimization and digital N management in rice</li>
-<li>Machine learning and remote sensing integration for rice yield forecasting</li>
-<li>DSSAT-based rice modeling and climate-smart simulations</li>
-</ul>
-</div>
-<div class="section">
-<h2>EXPERIENCE</h2>
-<p>Graduate Research Assistant (Jan 2024 – Present) – LSU, School of Plant, Environmental, and Soil Sciences (SPESS)
-• Conducting field-based and UAV-based rice nitrogen × variety trials
-• Performing NDRE and vegetation index analysis from multispectral drone imagery
-• Leading machine learning model development for yield prediction
-• Integrating DSSAT crop model with satellite and sensor data
-• Working on optimizing nitrogen use efficiency and phenological modeling in rice</p>
-<p>Senior Research Manager (Dec 2021 – Dec 2023) – Gorkha Agri Group, Kalanki-13, Kathmandu &amp; Tulsipur, Dang
-• Disease identification and management in rice crops
-• Worked with breeding and seed quality control teams
-• Provided training and plant health clinics
-• Partnered with NSAF, CIMMYT, SEAN on seed production</p>
-<p>Project Coordinator (Feb 2020 – Aug 2021) – Shreenagar Agro Farm, Butwal, Rupandehi
-• Led employment &amp; training projects for 2500+ farmers
-• Collaborated with UKaid, WEP, Baliyo Nepal, SKIH
-• Promoted climate-smart practices and biodiversity conservation</p>
-</div>
-<div class="section">
-<h2>ACADEMIC QUALIFICATION</h2>
-<ul>
-<li>Master’s in Precision Agriculture (Ongoing), LSU, School of Plant, Environmental, and Soil Sciences – Started May 2024</li>
-<li>Bachelor’s in Agriculture – IAAS, Tribhuvan University, Rupandehi – 78.83%, 2021</li>
-<li>HSEB (Intermediate) – Nepal Mega College, Kathmandu – 72.6%, 2016</li>
-<li>SLC – Little Angel’s Higher Secondary School – 82.88%, 2013</li>
-</ul>
-</div>
-<div class="section">
-<h2>AWARDS AND ACHIEVEMENTS</h2>
-<ul>
-<li>Third place in AI in Agriculture Conference Poster Competition – Mississippi, 2025</li>
-<li>Attended 2025 International DSSAT Training Program – Griffin, Georgia</li>
-<li>Full undergraduate scholarship – Tribhuvan University</li>
-<li>Vice President – Technical Students’ Association of Nepal (TSAN), Rupandehi</li>
-<li>All-Nepal Chess Tournament Champion</li>
-<li>Sports &amp; quiz competition medals (table tennis, cricket)</li>
-</ul>
-</div>
-<div class="section">
-<h2>SKILLS</h2>
-<ul>
-<li>R, Python, QGIS, Pix4D, PlanetScope, DSSAT &amp; crop modeling</li>
-<li>Machine Learning for yield forecasting</li>
-<li>Remote sensing, NDRE analysis, UAV mapping</li>
-<li>Communication, teamwork, and leadership</li>
-<li>English proficiency: TOEFL score 101</li>
-</ul>
-<p>📧 ritik.pokharel21@gmail.com | LSU: rpokha2@lsu.edu | 📞 225-220-2592
-🏫 School of Plant, Environmental and Soil Sciences
-104 Sturgis Hall, 137 J.C. Miller Hall
-Baton Rouge, LA 70803</p>
-</div>
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Ritik Pokharel — home">
+        <svg class="brand-pin" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="9" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">Ritik Pokharel</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#field-sites">Field Sites</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
 
-<div class="modal" id="modal">
-<div class="modal-content">
-<span class="modal-close" onclick="document.getElementById('modal').style.display='none';">×</span>
-<h2>Project Highlights</h2>
-<ul>
-<li><strong>Rice Yield Prediction:</strong> AI + DSSAT + UAV data.</li>
-<li><strong>Nitrogen Optimization:</strong> Efficiency trials and modeling.</li>
-<li><strong>GIS Mapping:</strong> Soil fertility in Ilam, Nepal.</li>
-</ul>
-</div>
-</div>
-<script>
-            function toggleDark() {
-                
-            if (document.body.classList.contains("dark-mode")) {
-                document.body.classList.remove("dark-mode");
-            } else {
-                document.body.classList.add("dark-mode");
-            }
-            
-            }
-            function printPage() {
-                window.print();
-            }
-        </script>
-<button class="print-btn" onclick="printPage()">🖨️ Print CV</button>
-<div class="section" id="blog">
-<h2>BLOG TIMELINE</h2>
-<ul>
-<li><strong>May 2025:</strong> Insights from DSSAT training at Griffin, Georgia.</li>
-<li><strong>April 2025:</strong> Evaluating NDRE index for nitrogen optimization in rice.</li>
-<li><strong>March 2025:</strong> Integrating UAV imagery with DSSAT for yield prediction.</li>
-</ul>
-</div>
-<button onclick="scrollToTop()" style="position:fixed;bottom:80px;right:20px;background-color:#5e2ca5;color:white;padding:10px 15px;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">⬆️ Back to Top</button>
-<script>
-function scrollToTop() {
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
-</script>
-<div class="popup-modal" id="aboutModal">
-<div class="popup-content">
-<span class="close-popup" onclick="closePopup('aboutModal')">×</span>
-<h2>About</h2>
-<p>I’m Ritik Pokharel, a passionate researcher at the intersection of agriculture, data science, and automation...</p>
-</div>
-</div>
-<div class="popup-modal" id="researchModal">
-<div class="popup-content">
-<span class="close-popup" onclick="closePopup('researchModal')">×</span>
-<h2>Research Work</h2>
-<p>Crop modeling, UAV analysis, NDRE-based nitrogen optimization, DSSAT integration, and AI-driven yield prediction.</p>
-</div>
-</div>
-<div class="popup-modal" id="skillsModal">
-<div class="popup-content">
-<span class="close-popup" onclick="closePopup('skillsModal')">×</span>
-<h2>Skills</h2>
-<ul>
-<li>Python, R, QGIS, Pix4D, DSSAT</li>
-<li>Machine Learning, UAV Mapping, NDRE Analysis</li>
-</ul>
-</div>
-</div>
-<div class="section" id="chessChallenge">
-<h2>♟️ Fun Chess Challenge</h2>
-<p><strong>White to play – Can you find mate in 2?</strong></p>
-<img alt="Mate in 2 Puzzle" src="chess.jpg" style="width:50%;display:block;margin:15px auto;border-radius:10px;"/>
-<p><button onclick="slideForm()" style="background:#5e2ca5;color:white;padding:10px 20px;border:none;border-radius:8px;font-weight:bold;">Submit Your Answer</button></p>
-<div id="formToggle" style="max-height:0px;overflow:hidden;margin-top:20px;">
-<iframe frameborder="0" height="585" marginheight="0" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLScOHFHoRPMtdmwZHtR4gihpmm3ce5wwppdjKBLqpRplcPzzgQ/viewform?embedded=true" width="640">Loading…</iframe>
-</div>
-</div>
-<footer style="text-align:center;margin-top:60px;padding:20px;border-top:2px solid #5e2ca5;">
-<p>Connect with me:</p>
-<div style="font-size: 1.5em;">
-<a href="mailto:ritik.pokharel21@gmail.com" style="margin: 0 10px; color: #5e2ca5;" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
-<a href="https://www.facebook.com/writeek.pokharel.3" style="margin: 0 10px; color: #5e2ca5;" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-<a href="https://www.linkedin.com/in/ritik-horti/" style="margin: 0 10px; color: #5e2ca5;" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-</div>
-</footer>
-<script>
-function slideForm() {
-    var formDiv = document.getElementById("formToggle");
-    var btn = event.target;
-    formDiv.style.maxHeight = "0px";
-    formDiv.style.display = "block";
-    setTimeout(() => {
-        formDiv.style.transition = "max-height 0.6s ease-in-out";
-        formDiv.style.maxHeight = "700px";
-    }, 10);
-    btn.style.display = "none";
-}
-</script>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <svg class="hero-contours" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M-40,120 C240,80 420,200 720,150 C1020,100 1220,220 1480,160"/>
+          <path d="M-40,190 C240,150 420,270 720,220 C1020,170 1220,290 1480,230"/>
+          <path d="M-40,260 C240,220 420,340 720,290 C1020,240 1220,360 1480,300"/>
+          <path d="M-40,330 C240,290 420,410 720,360 C1020,310 1220,430 1480,370"/>
+          <path d="M-40,400 C240,360 420,480 720,430 C1020,380 1220,500 1480,440"/>
+          <path d="M-40,470 C240,430 420,550 720,500 C1020,450 1220,570 1480,510"/>
+          <path d="M-40,540 C240,500 420,620 720,570 C1020,520 1220,640 1480,580"/>
+        </g>
+      </svg>
+      <div class="container hero-inner">
+        <p class="hero-coords mono">30.4515&deg;N&nbsp;&nbsp;91.1546&deg;W&nbsp;&nbsp;&mdash;&nbsp;&nbsp;BATON ROUGE, LA</p>
+        <h1 id="hero-title">Ritik Pokharel</h1>
+        <p class="hero-subtitle">GIS Analyst &mdash; Enterprise GIS &middot; UAV Remote Sensing &middot; GeoAI</p>
+        <p class="hero-value">I build production Esri solutions &mdash; enterprise GIS, offline field systems, web apps, and drone-derived intelligence &mdash; for utilities, municipalities, and research.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="files/Ritik-Pokharel-Resume.pdf" download>Download CV</a>
+        </div>
+        <div class="hero-social">
+          <a href="https://www.linkedin.com/in/ritikpokharel" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+          </a>
+          <a href="https://github.com/ritikpokharel21" target="_blank" rel="noopener" aria-label="GitHub profile">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </a>
+          <a href="mailto:ritik.geospatial@gmail.com" aria-label="Email Ritik Pokharel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="north-divider" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16V8M12 8l-3 3M12 8l3 3"/><text x="12" y="6.5" text-anchor="middle" font-size="5" fill="currentColor" stroke="none" font-family="monospace">N</text></svg>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <p class="section-kicker mono">01 &mdash; ABOUT</p>
+        <h2 id="about-title">Analyst first, researcher by training</h2>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>I&rsquo;m a GIS Analyst at the Global Geospatial Institute / Global Geospatial Solutions in Baton Rouge, Louisiana, where I administer a production ArcGIS Enterprise deployment, build offline field systems for water utilities, and teach GIS to the next generation of analysts. My work sits at the intersection of enterprise GIS, UAV remote sensing, and machine learning.</p>
+            <p>I earned my M.S. from LSU with a specialization in GIS and remote sensing, where I spent three growing seasons flying multispectral drone surveys over rice research plots and benchmarking machine-learning models for yield prediction &mdash; work published as a first-author paper in <em>Remote Sensing</em>. That research foundation shapes how I build: measured, reproducible, and grounded in real field data.</p>
+          </div>
+          <dl class="stats">
+            <div class="stat"><dt>Research plots surveyed</dt><dd><span class="stat-num" data-target="720" data-decimals="0">0</span></dd></div>
+            <div class="stat"><dt>Offline map areas deployed</dt><dd><span class="stat-num" data-target="16" data-decimals="0">0</span></dd></div>
+            <div class="stat"><dt>Students trained</dt><dd><span class="stat-num" data-target="300" data-decimals="0" data-suffix="+">0</span></dd></div>
+            <div class="stat"><dt>Imagery resolution</dt><dd><span class="stat-num" data-target="2.5" data-decimals="1" data-suffix=" cm">0</span></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section section-alt" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <p class="section-kicker mono">02 &mdash; EXPERIENCE</p>
+        <h2 id="experience-title">Where I&rsquo;ve worked</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <p class="timeline-date mono">Jun 2026 &mdash; Present</p>
+              <h3>GIS Analyst &amp; GIS Instructor</h3>
+              <p class="timeline-org">Global Geospatial Institute / Global Geospatial Solutions, LLC &mdash; Baton Rouge, LA</p>
+              <ul>
+                <li>Administer a production <strong>ArcGIS Enterprise</strong> deployment and geospatial data server for two client organizations, including managed hosting for organizations without their own Enterprise environment.</li>
+                <li>Built a parish-scale offline <strong>ArcGIS Field Maps</strong> disaster-response system for Terrebonne Parish Consolidated Waterworks: 16 downloadable areas, ~10 operational layers, 9&ndash;12 quad grid cells per area for fully disconnected field editing.</li>
+                <li>Developed the <strong>Gardere Community Hub</strong> in Experience Builder + Survey123 (4 operational layers, 60+ community resources) and presented the deployed app to stakeholders.</li>
+                <li>Manage an <strong>ArcGIS Online</strong> organization of 2,000+ users and 500+ groups; automated bulk provisioning with the ArcGIS API for Python.</li>
+                <li>Train <strong>300+ students, 15 teachers, and 4 GIS professionals</strong>; lead instruction for the GIS Entry-Level Technician workforce certification.</li>
+                <li>Delivered a GIS Maturity Assessment across 50 weighted criteria, producing an executive summary and prioritized implementation roadmap.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <p class="timeline-date mono">May 2024 &mdash; May 2026</p>
+              <h3>Graduate Research Assistant</h3>
+              <p class="timeline-org">Louisiana State University / LSU AgCenter &mdash; Baton Rouge, LA</p>
+              <ul>
+                <li>Flew UAV multispectral campaigns across three growing seasons, capturing <strong>720 rice research plots</strong> at ~10-day intervals under six nitrogen rates.</li>
+                <li>Processed imagery in Pix4D Mapper into <strong>2.5&nbsp;cm</strong> radiometrically calibrated orthomosaics; derived 19 vegetation indices for yield modeling.</li>
+                <li>Benchmarked <strong>12 machine-learning models</strong> in Python (R&sup2; = 0.89 in validation; XGBoost held R&sup2; = 0.63, nRMSE &lt; 9% on an independent season).</li>
+                <li>Published results as a <strong>first-author</strong> article in <em>Remote Sensing</em>.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <p class="timeline-date mono">Jan 2024 &mdash; May 2024</p>
+              <h3>Graduate Teaching Assistant</h3>
+              <p class="timeline-org">Louisiana State University &mdash; Baton Rouge, LA</p>
+              <ul>
+                <li>Instructed 50+ undergraduates across weekly BIOL 1208 laboratory sections.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <p class="timeline-date mono">Dec 2021 &mdash; Dec 2023</p>
+              <h3>Research Manager</h3>
+              <p class="timeline-org">Gorkha Agri Group &mdash; Nepal</p>
+              <ul>
+                <li>Directed disease diagnostics and seed-quality control for commercial rice and hybrid tomato production with NSAF, CIMMYT, and SEAN.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="section-kicker mono">03 &mdash; PROJECTS</p>
+        <h2 id="projects-title">Selected work</h2>
+        <div class="cards">
+          <article class="card">
+            <img class="card-img" src="assets/img/gallery-1.svg" alt="Placeholder: UAV multispectral rice yield project visual" data-placeholder="true" loading="lazy" width="800" height="450">
+            <div class="card-body">
+              <p class="card-kicker mono">UAV &middot; MACHINE LEARNING</p>
+              <h3>Rice Yield Estimation from UAV Multispectral Imagery</h3>
+              <p><strong>Problem:</strong> predicting rice yield before harvest from drone imagery across multiple seasons and nitrogen treatments.</p>
+              <p><strong>Role:</strong> designed the full pipeline &mdash; flight planning, Pix4D processing, vegetation-index extraction, and model benchmarking.</p>
+              <p><strong>Outcome:</strong> 12-model benchmark reaching R&sup2; = 0.89; published as a first-author paper in <em>Remote Sensing</em>; reproducible Python workflow on GitHub.</p>
+              <div class="card-links">
+                <a href="https://github.com/ritikpokharel21/rice_yield_uav_ml_bma" target="_blank" rel="noopener">View code</a>
+                <a href="https://doi.org/10.3390/rs18101575" target="_blank" rel="noopener">Read the paper</a>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="assets/img/gallery-2.svg" alt="Placeholder: Gardere Community Hub web app visual" data-placeholder="true" loading="lazy" width="800" height="450">
+            <div class="card-body">
+              <p class="card-kicker mono">EXPERIENCE BUILDER &middot; SURVEY123</p>
+              <h3>Gardere Community Hub</h3>
+              <p><strong>Problem:</strong> a Baton Rouge neighborhood needed one public place to find community resources and report local issues.</p>
+              <p><strong>Role:</strong> built and deployed the Experience Builder app with an integrated Survey123 reporting survey.</p>
+              <p><strong>Outcome:</strong> 4 operational layers and 60+ mapped community resources live; presented to project stakeholders in October 2026.</p>
+              <div class="card-links">
+                <a href="https://l.ead.me/gardereapp" target="_blank" rel="noopener">Open the live app</a>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="assets/img/gallery-3.svg" alt="Placeholder: soil fertility mapping of Ilam Nepal visual" data-placeholder="true" loading="lazy" width="800" height="450">
+            <div class="card-body">
+              <p class="card-kicker mono">ARCGIS &middot; GEOSTATISTICS</p>
+              <h3>GIS-Based Soil Fertility Mapping &mdash; Ilam, Nepal</h3>
+              <p><strong>Problem:</strong> cardamom growers in Pandam, Ilam needed spatial guidance on soil fertility.</p>
+              <p><strong>Role:</strong> interpolated soil pH, organic matter, N, P, K, and texture into continuous fertility surfaces using inverse-distance weighting in ArcMap with Geostatistical Analyst.</p>
+              <p><strong>Outcome:</strong> published peer-reviewed article mapping fertility zones for the cardamom-growing area.</p>
+              <div class="card-links">
+                <a href="https://doi.org/10.22214/ijraset.2023.51229" target="_blank" rel="noopener">Read the article</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="section section-alt" id="publications" aria-labelledby="publications-title">
+      <div class="container">
+        <p class="section-kicker mono">04 &mdash; PUBLICATIONS</p>
+        <h2 id="publications-title">Peer-reviewed work</h2>
+        <ol class="pub-list">
+          <li>
+            <p class="pub-citation"><strong>Pokharel, R.</strong>, Gentimis, T., Kongchum, M., Tubana, B., Adhikari, R., &amp; Setiyono, T. (2026). Rice Yield Estimation Based on Machine Learning Applied to UAV Remote Sensing Data. <em>Remote Sensing</em>, 18(10), 1575.</p>
+            <p class="pub-meta"><span class="badge">First author</span> <a href="https://doi.org/10.3390/rs18101575" target="_blank" rel="noopener">doi:10.3390/rs18101575</a></p>
+          </li>
+          <li>
+            <p class="pub-citation">Baker, S., Islam, M. N., Bhandari, M., <em>et al.</em>, including <strong>Pokharel, R.</strong> (2026). Strategically Timed UAS Data Acquisition for Wheat Yield Prediction Using Explainable AI: A Multi-Year Phenology-Aligned Study. <em>Smart Agricultural Technology</em>, 15, 102606.</p>
+            <p class="pub-meta"><a href="https://doi.org/10.1016/j.atech.2026.102606" target="_blank" rel="noopener">doi:10.1016/j.atech.2026.102606</a></p>
+          </li>
+          <li>
+            <p class="pub-citation"><strong>Pokharel, R.</strong>, Adhikari, R., Nepal, N., &amp; Budhathoki, R. (2023). Soil Analysis GIS-Based Fertility Assessment and Soil Mapping of Cardamom Growing Area, Pandam, Ilam, Nepal. <em>IJRASET</em>, 5(1).</p>
+            <p class="pub-meta"><a href="https://doi.org/10.22214/ijraset.2023.51229" target="_blank" rel="noopener">doi:10.22214/ijraset.2023.51229</a></p>
+          </li>
+        </ol>
+        <p class="thesis-line">M.S. Thesis: <em>Digital Agriculture for Rice Nutrient Management and Yield Prediction Using UAV-Based Remote Sensing and Machine Learning</em> &mdash; <a href="https://repository.lsu.edu/gradschool_theses/6375/" target="_blank" rel="noopener">LSU Repository</a></p>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section" id="certifications" aria-labelledby="certifications-title">
+      <div class="container">
+        <p class="section-kicker mono">05 &mdash; CERTIFICATIONS</p>
+        <h2 id="certifications-title">Credentials &amp; training</h2>
+        <div class="cert-groups">
+          <div class="cert-group">
+            <h3>In progress</h3>
+            <ul class="cert-list">
+              <li><span><strong>GISP-E (PreGISP)</strong> &mdash; examination scheduled November 22, 2026</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="GISP-E certificate PDF (coming soon)">PDF</a></li>
+              <li><span><strong>FAA Part 107</strong> Remote Pilot &mdash; in progress (certification not yet held)</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="FAA Part 107 certificate PDF (coming soon)">PDF</a></li>
+            </ul>
+          </div>
+          <div class="cert-group">
+            <h3>Esri MOOCs (4)</h3>
+            <ul class="cert-list">
+              <li><span>Make an Impact with Enterprise GIS</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="Enterprise GIS MOOC certificate PDF (coming soon)">PDF</a></li>
+              <li><span>The ArcGIS Imagery MOOC: Foundations and Frontiers</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="Imagery MOOC certificate PDF (coming soon)">PDF</a></li>
+              <li><span>Spatial Data Science: The New Frontier in Analytics</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="Spatial Data Science MOOC certificate PDF (coming soon)">PDF</a></li>
+              <li><span>The Power of Where: Communicating with Maps</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="Power of Where MOOC certificate PDF (coming soon)">PDF</a></li>
+            </ul>
+          </div>
+          <div class="cert-group">
+            <h3>Esri training certificates <span class="muted-note">(11 total, selected)</span></h3>
+            <ul class="cert-list">
+              <li><span>ArcGIS Experience Builder Basics</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="Experience Builder certificate PDF (coming soon)">PDF</a></li>
+              <li><span>Introduction to ArcGIS API for Python</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="ArcGIS API for Python certificate PDF (coming soon)">PDF</a></li>
+              <li><span>Creating and Sharing GIS Content Using ArcGIS Online</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="Sharing GIS Content certificate PDF (coming soon)">PDF</a></li>
+              <li><span>ArcGIS Online Basics</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="ArcGIS Online Basics certificate PDF (coming soon)">PDF</a></li>
+              <li><span>Telling Stories with GIS Maps</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="Telling Stories with GIS Maps certificate PDF (coming soon)">PDF</a></li>
+              <li><span>Getting Started with Imagery and Remote Sensing</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="Imagery and Remote Sensing certificate PDF (coming soon)">PDF</a></li>
+              <li><span>ArcGIS Drone2Map Basics</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="Drone2Map certificate PDF (coming soon)">PDF</a></li>
+            </ul>
+          </div>
+          <div class="cert-group">
+            <h3>Additional training</h3>
+            <ul class="cert-list">
+              <li><span><strong>DSSAT</strong> Crop Modeling and Decision-Support Systems &mdash; University of Georgia, 2025</span> <a class="pdf-link" href="files/certs/" data-placeholder="true" aria-label="DSSAT training certificate PDF (coming soon)">PDF</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="section-kicker mono">06 &mdash; SKILLS</p>
+        <h2 id="skills-title">Technical toolkit</h2>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3>GIS &amp; Esri</h3>
+            <ul class="chips">
+              <li>ArcGIS Pro</li><li>ArcGIS Enterprise</li><li>Portal for ArcGIS</li><li>ArcGIS Server</li><li>ArcGIS Online</li><li>Experience Builder</li><li>Dashboards</li><li>StoryMaps</li><li>Survey123</li><li>Field Maps</li><li>ModelBuilder</li><li>Spatial Analyst</li><li>Image Analyst</li><li>QGIS</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Programming &amp; Data</h3>
+            <ul class="chips">
+              <li>Python</li><li>ArcPy</li><li>ArcGIS API for Python</li><li>pandas</li><li>NumPy</li><li>GeoPandas</li><li>scikit-learn</li><li>R</li><li>SQL / PostgreSQL</li><li>Git &amp; GitHub</li><li>Jupyter</li><li>Arcade</li><li>JavaScript</li><li>Enterprise geodatabases</li><li>QA/QC</li><li>Metadata</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Remote Sensing &amp; GeoAI</h3>
+            <ul class="chips">
+              <li>UAV multispectral acquisition</li><li>Pix4D Mapper</li><li>ArcGIS Drone2Map</li><li>Orthomosaics</li><li>DSM / DTM</li><li>Radiometric calibration</li><li>GCPs</li><li>NDVI / NDRE</li><li>Sentinel-2</li><li>Landsat</li><li>NAIP</li><li>Supervised classification</li><li>Change detection</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Machine Learning</h3>
+            <ul class="chips">
+              <li>Random Forest</li><li>XGBoost</li><li>Gradient boosting</li><li>Neural networks</li><li>TensorFlow / Keras</li><li>SVM</li><li>PLSR</li><li>Ridge / LASSO / Elastic Net</li><li>Feature engineering</li><li>Cross-validation</li><li>Independent-season validation</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Field &amp; Cartography</h3>
+            <ul class="chips">
+              <li>GNSS / GPS collection</li><li>Offline mobile deployment</li><li>Map series</li><li>Coordinate systems &amp; projections</li><li>Topology</li><li>Symbology</li><li>Print-ready layouts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIELD SITES -->
+    <section class="section" id="field-sites" aria-labelledby="field-sites-title">
+      <div class="container">
+        <p class="section-kicker mono">07 &mdash; FIELD SITES</p>
+        <h2 id="field-sites-title">Where the work happens</h2>
+        <p class="section-lede">From Louisiana water utilities to Himalayan cardamom fields &mdash; a map of the places behind the projects.</p>
+        <div class="map-wrap">
+          <div id="map" role="application" aria-label="Interactive map of Ritik Pokharel's field sites"></div>
+          <p class="map-fallback" id="mapFallback" hidden>This interactive map needs JavaScript. The sites: Baton Rouge, LA (home base); Crowley, LA (LSU AgCenter Rice Research Station); Terrebonne Parish, LA (TPCW offline field system); Ilam, Nepal (soil fertility mapping).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section section-alt" aria-labelledby="gallery-title">
+      <div class="container">
+        <p class="section-kicker mono">FIELD NOTES</p>
+        <h2 id="gallery-title">From the field</h2>
+        <div class="gallery">
+          <figure>
+            <img src="assets/img/headshot.svg" alt="Placeholder: professional headshot of Ritik Pokharel" data-placeholder="true" loading="lazy" width="600" height="600">
+            <figcaption class="mono">PORTRAIT &mdash; REPLACE WITH PHOTO</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/gallery-4.svg" alt="Placeholder: UAV flight operations photo" data-placeholder="true" loading="lazy" width="800" height="600">
+            <figcaption class="mono">UAV OPS &mdash; REPLACE WITH PHOTO</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-inner">
+        <p class="section-kicker mono">08 &mdash; CONTACT</p>
+        <h2 id="contact-title">Let&rsquo;s talk geospatial</h2>
+        <p class="section-lede">Open to GIS analyst roles, GeoAI collaborations, and interesting spatial problems.</p>
+        <div class="contact-cards">
+          <a class="contact-card contact-card-primary" href="mailto:ritik.geospatial@gmail.com">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <span><strong>Email me</strong><br><span class="mono">ritik.geospatial@gmail.com</span></span>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/ritikpokharel" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+            <span><strong>LinkedIn</strong><br><span class="mono">linkedin.com/in/ritikpokharel</span></span>
+          </a>
+          <a class="contact-card" href="https://github.com/ritikpokharel21" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            <span><strong>GitHub</strong><br><span class="mono">github.com/ritikpokharel21</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Ritik Pokharel &middot; <span class="mono">Last updated October 2026</span></p>
+      <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        Top
+      </button>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

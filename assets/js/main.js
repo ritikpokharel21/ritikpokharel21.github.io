@@ -16,7 +16,7 @@
   if (stored === "light" || stored === "dark") {
     applyTheme(stored);
   } else {
-    applyTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    applyTheme("dark"); /* default: dark mode */
   }
   themeToggle.addEventListener("click", function () {
     var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -64,8 +64,12 @@
     var target = parseFloat(el.getAttribute("data-target"));
     var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
     var suffix = el.getAttribute("data-suffix") || "";
+    var prefix = el.getAttribute("data-prefix") || "";
+    function fmt(v) {
+      return prefix + v.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + suffix;
+    }
     if (reduceMotion) {
-      el.textContent = target.toFixed(decimals) + suffix;
+      el.textContent = fmt(target);
       return;
     }
     var dur = 1400, start = null;
@@ -73,9 +77,9 @@
       if (!start) start = ts;
       var p = Math.min((ts - start) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = (target * eased).toFixed(decimals) + suffix;
+      el.textContent = fmt(target * eased);
       if (p < 1) requestAnimationFrame(frame);
-      else el.textContent = target.toFixed(decimals) + suffix;
+      else el.textContent = fmt(target);
     }
     requestAnimationFrame(frame);
   }
@@ -150,17 +154,20 @@
       mapEl.setAttribute("aria-hidden", "true");
     });
   }
-  if ("IntersectionObserver" in window) {
-    var mapObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          initMap();
-          mapObs.disconnect();
-        }
-      });
-    }, { rootMargin: "300px" });
-    mapObs.observe(document.getElementById("field-sites"));
-  } else {
-    initMap();
+  var fsEl = document.getElementById("field-sites");
+  if (mapEl && fsEl) {
+    if ("IntersectionObserver" in window) {
+      var mapObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            initMap();
+            mapObs.disconnect();
+          }
+        });
+      }, { rootMargin: "300px" });
+      mapObs.observe(fsEl);
+    } else {
+      initMap();
+    }
   }
 })();

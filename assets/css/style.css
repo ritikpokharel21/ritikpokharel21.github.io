@@ -517,3 +517,13 @@ img[data-placeholder="true"] { opacity: 0.92; }
 .card[data-project] { cursor: pointer; }
 .card[data-project]:hover { transform: translateY(-3px); }
 .card[data-project]:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+
+/* Project screenshot galleries */
+.shots-intro { color: var(--muted); margin: 0 0 1.2rem; }
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin: 0 0 2rem; align-items: start; }
+.shots figure { margin: 0; }
+.shots img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); }
+.shots figure.wide { grid-column: 1 / -1; }
+.shots figcaption { font-size: 0.88rem; color: var(--muted); margin-top: 0.55rem; line-height: 1.45; }
+.shots figcaption .mono { color: var(--accent-text); margin-right: 0.4em; }
+@media (max-width: 640px) { .shots { grid-template-columns: repeat(2, 1fr); gap: 1rem; } }

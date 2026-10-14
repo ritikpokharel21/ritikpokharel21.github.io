@@ -8,8 +8,10 @@
   var themeToggle = document.getElementById("themeToggle");
   function applyTheme(name) {
     root.setAttribute("data-theme", name);
-    themeToggle.setAttribute("aria-pressed", name === "dark" ? "true" : "false");
-    themeToggle.setAttribute("aria-label", name === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-pressed", name === "dark" ? "true" : "false");
+      themeToggle.setAttribute("aria-label", name === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    }
   }
   var stored = null;
   try { stored = localStorage.getItem("rp-theme"); } catch (e) { /* private mode */ }
@@ -18,27 +20,48 @@
   } else {
     applyTheme("dark"); /* default: dark mode */
   }
-  themeToggle.addEventListener("click", function () {
-    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    applyTheme(next);
-    try { localStorage.setItem("rp-theme", next); } catch (e) { /* private mode */ }
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(next);
+      try { localStorage.setItem("rp-theme", next); } catch (e) { /* private mode */ }
+    });
+  }
+
+  /* Project cards: whole card opens its project page (same tab); inner links keep working */
+  Array.prototype.forEach.call(document.querySelectorAll(".card[data-project]"), function (card) {
+    var target = card.getAttribute("data-project");
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "link");
+    card.addEventListener("click", function (e) {
+      if (e.target.closest("a")) return;
+      window.location.href = target;
+    });
+    card.addEventListener("keydown", function (e) {
+      if ((e.key === "Enter" || e.key === " ") && !e.target.closest("a")) {
+        e.preventDefault();
+        window.location.href = target;
+      }
+    });
   });
 
   /* Mobile nav */
   var navToggle = document.getElementById("navToggle");
   var navLinks = document.getElementById("navLinks");
-  navToggle.addEventListener("click", function () {
-    var open = navLinks.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-  });
-  navLinks.addEventListener("click", function (e) {
-    if (e.target.tagName === "A") {
-      navLinks.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.setAttribute("aria-label", "Open menu");
-    }
-  });
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", function () {
+      var open = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+    navLinks.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open menu");
+      }
+    });
+  }
 
   /* Active nav link on scroll */
   var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));

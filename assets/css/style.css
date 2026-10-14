@@ -532,3 +532,4 @@ img[data-placeholder="true"] { opacity: 0.92; }
 .workflow-figure { margin: 0 0 2.5rem; }
 .workflow-figure img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1px solid var(--line); background: #fff; }
 .workflow-figure figcaption { font-size: 0.92rem; color: var(--muted); margin-top: 0.7rem; line-height: 1.55; }
+.workflow-figure.tall img { max-width: 620px; margin: 0 auto; }

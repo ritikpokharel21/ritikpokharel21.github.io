@@ -553,7 +553,11 @@ img[data-placeholder="true"] { opacity: 0.92; }
 /* Mobile: open PDFs fullscreen instead of the inline embed (iOS cannot touch-scroll PDF iframes) */
 .pdf-open-card { display: none; }
 .pdf-hint { color: var(--muted); font-size: 0.92rem; }
+.pdf-header-mobile { display: none; }
 @media (max-width: 700px) {
+  .pdf-frame { display: none; }
   .pdf-open-card { display: block; margin-bottom: 1.2rem; }
   .pdf-open-card .btn { display: block; text-align: center; }
+  .pdf-header-mobile { display: block; margin: 0 0 1.2rem; }
+  .pdf-header-mobile img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); background: #fff; }
 }

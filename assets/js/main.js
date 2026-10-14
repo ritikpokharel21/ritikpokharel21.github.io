@@ -28,6 +28,18 @@
     });
   }
 
+  /* Project tabs: center the active tab on load so it is visible on small screens */
+  (function () {
+    var active = document.querySelector(".ptab.active");
+    if (!active) return;
+    function center() {
+      try { active.scrollIntoView({ block: "nearest", inline: "center" }); } catch (e) {}
+    }
+    center();
+    window.addEventListener("load", center);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(center);
+  })();
+
   /* Project cards: whole card opens its project page (same tab); inner links keep working */
   Array.prototype.forEach.call(document.querySelectorAll(".card[data-project]"), function (card) {
     var target = card.getAttribute("data-project");
@@ -122,7 +134,8 @@
   }
 
   /* Back to top */
-  document.getElementById("backToTop").addEventListener("click", function () {
+  var backToTop = document.getElementById("backToTop");
+  if (backToTop) backToTop.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
   });
 

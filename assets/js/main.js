@@ -1,4 +1,4 @@
-/* Ritik Pokharel portfolio — theme, nav, counters, lazy map. */
+/* Ritik Pokharel portfolio - theme, nav, counters, lazy map. */
 (function () {
   "use strict";
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -140,9 +140,9 @@
         maxZoom: 19
       }).addTo(map);
       var sites = [
-        { coords: [30.4515, -91.1546], title: "Baton Rouge, LA", text: "Home base — Global Geospatial Institute / Global Geospatial Solutions.", link: "#experience", linkText: "Experience" },
-        { coords: [30.2142, -92.3698], title: "Crowley, LA", text: "LSU AgCenter Rice Research Station — 720-plot UAV multispectral campaigns.", link: "#projects", linkText: "Projects" },
-        { coords: [29.5958, -90.7195], title: "Terrebonne Parish, LA", text: "TPCW offline Field Maps disaster-response system — 16 offline areas.", link: "#experience", linkText: "Experience" },
+        { coords: [30.4515, -91.1546], title: "Baton Rouge, LA", text: "Home base - Global Geospatial Institute / Global Geospatial Solutions.", link: "#experience", linkText: "Experience" },
+        { coords: [30.2142, -92.3698], title: "Crowley, LA", text: "LSU AgCenter Rice Research Station - 720-plot UAV multispectral campaigns.", link: "#projects", linkText: "Projects" },
+        { coords: [29.5958, -90.7195], title: "Terrebonne Parish, LA", text: "TPCW offline Field Maps disaster-response system - 16 offline areas.", link: "#experience", linkText: "Experience" },
         { coords: [26.9081, 87.9268], title: "Ilam, Nepal", text: "GIS-based soil fertility mapping of the Pandam cardamom-growing area.", link: "#publications", linkText: "Publications" }
       ];
       sites.forEach(function (s) {

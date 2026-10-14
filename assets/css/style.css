@@ -533,3 +533,20 @@ img[data-placeholder="true"] { opacity: 0.92; }
 .workflow-figure img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1px solid var(--line); background: #fff; }
 .workflow-figure figcaption { font-size: 0.92rem; color: var(--muted); margin-top: 0.7rem; line-height: 1.55; }
 .workflow-figure.tall img { max-width: 620px; margin: 0 auto; }
+
+/* Project switcher tabs (on project pages) */
+.project-tabs {
+  position: sticky; top: 4.6rem; z-index: 40;
+  display: flex; gap: 0.3rem; justify-content: flex-start;
+  width: fit-content; max-width: 100%; margin: 0 auto 2.2rem; padding: 0.4rem 0.55rem;
+  border-radius: 999px; overflow-x: auto; scrollbar-width: none;
+  box-shadow: 0 6px 22px rgb(15 23 42 / 0.12);
+}
+.project-tabs::-webkit-scrollbar { display: none; }
+.ptab {
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.05em; white-space: nowrap;
+  padding: 0.55em 1.05em; border-radius: 999px; color: var(--muted); text-decoration: none;
+  flex: none;
+}
+.ptab:hover { color: var(--ink); text-decoration: none; }
+.ptab.active { background: var(--accent); color: #fff; font-weight: 500; }

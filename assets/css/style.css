@@ -561,3 +561,23 @@ img[data-placeholder="true"] { opacity: 0.92; }
   .pdf-header-mobile { display: block; margin: 0 0 1.2rem; }
   .pdf-header-mobile img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); background: #fff; }
 }
+
+/* Certifications CTA (homepage) */
+.cert-cta { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.6rem 1.8rem; border-radius: 18px; text-decoration: none; color: inherit; box-shadow: 0 6px 22px rgb(15 23 42 / 0.12); }
+.cert-cta:hover { text-decoration: none; transform: translateY(-2px); }
+.cert-cta-kicker { font-size: 0.75rem; letter-spacing: 0.08em; color: var(--accent-text); }
+.cert-cta-title { display: block; font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; margin: 0.35rem 0 0.25rem; }
+.cert-cta-sub { color: var(--muted); margin: 0; font-size: 0.95rem; }
+.cert-cta-arrow { font-size: 1.8rem; color: var(--accent-text); flex: none; }
+
+/* Certifications page */
+.certs-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 0 0 3rem; }
+.cert-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.25rem; box-shadow: var(--shadow); }
+.cert-card h3 { font-size: 1.08rem; margin: 0 0 0.35rem; line-height: 1.35; }
+.cert-meta { font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 1rem; text-transform: uppercase; }
+.cert-img { display: block; }
+.cert-card img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--line); }
+.cert-placeholder { border-style: dashed; border-width: 2px; background: transparent; box-shadow: none; }
+.cert-coming { color: var(--muted); font-style: italic; }
+.cert-progress { border-left: 4px solid var(--accent); }
+@media (max-width: 760px) { .certs-grid { grid-template-columns: 1fr; } }

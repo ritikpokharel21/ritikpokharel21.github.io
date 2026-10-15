@@ -581,3 +581,16 @@ img[data-placeholder="true"] { opacity: 0.92; }
 .cert-coming { color: var(--muted); font-style: italic; }
 .cert-progress { border-left: 4px solid var(--accent); }
 @media (max-width: 760px) { .certs-grid { grid-template-columns: 1fr; } }
+
+/* Certificate lightbox */
+.cert-img { cursor: zoom-in; }
+.lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 1.25rem; background: rgb(2 6 12 / 0.88); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); opacity: 0; transition: opacity 0.25s ease; }
+.lightbox.open { opacity: 1; }
+.lightbox[hidden] { display: none; }
+.lightbox-figure { margin: 0; max-width: min(1100px, 100%); }
+.lightbox-figure img { display: block; width: auto; max-width: 100%; max-height: calc(100vh - 7rem); margin: 0 auto; border-radius: 12px; box-shadow: 0 24px 80px rgb(0 0 0 / 0.5); background: #fff; }
+.lightbox-figure figcaption { color: #fff; text-align: center; margin-top: 0.9rem; font-size: 1rem; }
+.lightbox-close { position: absolute; top: 1rem; right: 1rem; width: 2.75rem; height: 2.75rem; border-radius: 999px; border: 1px solid rgb(255 255 255 / 0.25); background: rgb(255 255 255 / 0.12); color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.lightbox-close:hover { background: rgb(255 255 255 / 0.22); }
+body.lightbox-open { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { .lightbox { transition: none; } }

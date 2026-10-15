@@ -40,6 +40,55 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(center);
   })();
 
+  /* Certificate lightbox: click a certificate to view it in place; click outside, the close button, or ESC to dismiss */
+  (function () {
+    var lb = document.getElementById("certLightbox");
+    if (!lb) return;
+    var lbImg = document.getElementById("lightboxImg");
+    var lbCap = document.getElementById("lightboxCap");
+    var lbClose = lb.querySelector(".lightbox-close");
+    var lastFocus = null;
+    var hideTimer = null;
+    function openLb(src, title) {
+      if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+      lastFocus = document.activeElement;
+      lbImg.src = src;
+      lbImg.alt = "Certificate: " + title;
+      lbCap.textContent = title;
+      lb.hidden = false;
+      document.body.classList.add("lightbox-open");
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { lb.classList.add("open"); });
+      });
+      lbClose.focus();
+    }
+    function closeLb() {
+      lb.classList.remove("open");
+      document.body.classList.remove("lightbox-open");
+      hideTimer = setTimeout(function () {
+        lb.hidden = true;
+        lbImg.removeAttribute("src");
+        hideTimer = null;
+      }, 260);
+      if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+    }
+    Array.prototype.forEach.call(document.querySelectorAll(".cert-img"), function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        var img = a.querySelector("img");
+        var label = a.getAttribute("aria-label") || "";
+        var title = label.replace(/^View certificate:\s*/, "") || (img && img.getAttribute("alt")) || "Certificate";
+        openLb(a.getAttribute("href"), title);
+      });
+    });
+    lb.addEventListener("click", function (e) {
+      if (e.target === lb || e.target === lbClose) closeLb();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !lb.hidden) closeLb();
+    });
+  })();
+
   /* Project cards: whole card opens its project page (same tab); inner links keep working */
   Array.prototype.forEach.call(document.querySelectorAll(".card[data-project]"), function (card) {
     var target = card.getAttribute("data-project");

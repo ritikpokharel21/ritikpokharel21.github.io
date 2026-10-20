@@ -127,9 +127,11 @@
   /* Active nav link on scroll */
   var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));
   var linkMap = {};
-  Array.prototype.forEach.call(navLinks.querySelectorAll("a"), function (a) {
-    linkMap[a.getAttribute("href").slice(1)] = a;
-  });
+  if (navLinks) {
+    Array.prototype.forEach.call(navLinks.querySelectorAll("a"), function (a) {
+      linkMap[a.getAttribute("href").slice(1)] = a;
+    });
+  }
   if ("IntersectionObserver" in window && !reduceMotion) {
     var navObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -296,5 +298,23 @@
       btn.setAttribute("href", "cv.html");
       btn.removeAttribute("download");
     }
+  })();
+/* External links: on phones they open in the same window; on desktop they open
+     in a new window. Applies to every off-site link (papers, profiles, requests). */
+  (function () {
+    var onPhone = window.matchMedia("(max-width: 768px)").matches;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="http://"], a[href^="https://"]'), function (a) {
+      var url;
+      try { url = new URL(a.getAttribute("href"), window.location.href); } catch (e) { return; }
+      if (url.hostname === window.location.hostname) return;
+      if (onPhone) {
+        a.removeAttribute("target");
+      } else {
+        a.setAttribute("target", "_blank");
+        var rel = (a.getAttribute("rel") || "").split(/\s+/).filter(Boolean);
+        if (rel.indexOf("noopener") === -1) rel.push("noopener");
+        a.setAttribute("rel", rel.join(" "));
+      }
+    });
   })();
 })();

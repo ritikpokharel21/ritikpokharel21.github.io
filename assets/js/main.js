@@ -227,7 +227,7 @@
       var sites = [
         { coords: [30.4515, -91.1546], title: "Baton Rouge, LA", text: "Home base - Global Geospatial Institute / Global Geospatial Solutions.", link: "#experience", linkText: "Experience" },
         { coords: [30.2142, -92.3698], title: "Crowley, LA", text: "LSU AgCenter Rice Research Station - 720-plot UAV multispectral campaigns.", link: "#projects", linkText: "Projects" },
-        { coords: [29.5958, -90.7195], title: "Terrebonne Parish, LA", text: "TPCW offline Field Maps disaster-response system - 16 offline areas.", link: "#experience", linkText: "Experience" },
+        { coords: [29.5958, -90.7195], title: "A Louisiana parish, LA", text: "Offline Field Maps disaster-response system - 16 offline areas.", link: "#experience", linkText: "Experience" },
         { coords: [26.9081, 87.9268], title: "Ilam, Nepal", text: "GIS-based soil fertility mapping of the Pandam cardamom-growing area.", link: "#publications", linkText: "Publications" }
       ];
       sites.forEach(function (s) {
@@ -255,4 +255,46 @@
       initMap();
     }
   }
+/* Scroll restore: remember where the visitor was on this page when they open another
+     page on this site, and put them back there when they press Back. */
+  (function () {
+    var KEY = "rp-scroll:" + window.location.pathname;
+    window.addEventListener("pagehide", function () {
+      try { sessionStorage.setItem(KEY, String(Math.round(window.scrollY || 0))); } catch (e) { /* private mode */ }
+    });
+    var navType = null;
+    try {
+      var navs = performance.getEntriesByType && performance.getEntriesByType("navigation");
+      if (navs && navs.length) navType = navs[0].type;
+    } catch (e) { /* older browser */ }
+    window.addEventListener("pageshow", function (e) {
+      if (!e.persisted && navType !== "back_forward") return;
+      if (window.location.hash) return;
+      var y = null;
+      try { y = sessionStorage.getItem(KEY); } catch (err) { /* private mode */ }
+      if (y === null) return;
+      var top = parseInt(y, 10);
+      if (!top || isNaN(top)) return;
+      var rootEl = document.documentElement;
+      var prevBehavior = rootEl.style.scrollBehavior;
+      rootEl.style.scrollBehavior = "auto";
+      window.scrollTo(0, top);
+      setTimeout(function () {
+        window.scrollTo(0, top);
+        rootEl.style.scrollBehavior = prevBehavior;
+      }, 400);
+    });
+  })();
+
+  /* Phones: the Download CV button opens the CV viewer page (cv.html) instead of the
+     raw PDF, so the reader sees the CV with a clear download button below it.
+     Desktop keeps the direct one-click PDF download. */
+  (function () {
+    var btn = document.getElementById("cvDownloadBtn");
+    if (!btn) return;
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      btn.setAttribute("href", "cv.html");
+      btn.removeAttribute("download");
+    }
+  })();
 })();

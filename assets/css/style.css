@@ -445,7 +445,7 @@ img[data-placeholder="true"] { opacity: 0.92; }
 @media (max-width: 900px) {
   .cards { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .about-photo { max-width: 230px; margin: 0 auto; }
+  .about-photo { display: none; }
   .stats { grid-template-columns: 1fr 1fr; }
   .gallery { grid-template-columns: 1fr; }
   .contact-cards { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
@@ -598,3 +598,20 @@ img[data-placeholder="true"] { opacity: 0.92; }
 .lightbox-close:hover { background: rgb(255 255 255 / 0.22); }
 body.lightbox-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { .lightbox { transition: none; } }
+
+/* Publications page */
+.pub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.pub-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.pub-card > img { width: 100%; height: 168px; object-fit: contain; background: #ffffff; display: block; border-bottom: 1px solid var(--line); }
+.pub-body { padding: 1.25rem 1.35rem 1.45rem; display: flex; flex-direction: column; gap: 0.55rem; flex: 1; }
+.pub-body h3 { font-size: 1.1rem; line-height: 1.35; margin: 0; }
+.pub-authors { color: var(--muted); font-size: 0.9rem; margin: 0; }
+.pub-journal { margin: 0; font-size: 0.95rem; }
+.pub-journal em { color: var(--accent-text); font-weight: 600; font-style: normal; }
+.pub-actions { margin-top: auto; padding-top: 0.7rem; display: flex; gap: 0.65rem; flex-wrap: wrap; }
+.pub-actions .btn { padding: 0.55rem 1rem; font-size: 0.9rem; }
+@media (max-width: 900px) { .pub-grid { grid-template-columns: 1fr; } }
+
+/* CV viewer page */
+.cv-frame { width: 100%; height: 74vh; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); display: block; }
+.cv-actions { text-align: center; margin: 1.4rem 0 3rem; }

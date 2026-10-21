@@ -161,6 +161,8 @@
 
   /* Animated stat counters */
   function animateCounter(el) {
+    var run = (el._counterRun || 0) + 1;
+    el._counterRun = run;
     var target = parseFloat(el.getAttribute("data-target"));
     var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
     var suffix = el.getAttribute("data-suffix") || "";
@@ -174,6 +176,7 @@
     }
     var dur = 1400, start = null;
     function frame(ts) {
+      if (el._counterRun !== run) return; /* a newer run took over */
       if (!start) start = ts;
       var p = Math.min((ts - start) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
@@ -188,8 +191,9 @@
     var statObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          statObs.unobserve(entry.target);
+          animateCounter(entry.target); /* replays every time the stat scrolls back into view */
+        } else {
+          entry.target._counterRun = (entry.target._counterRun || 0) + 1; /* cancel any mid-count run while off-screen */
         }
       });
     }, { threshold: 0.4 });

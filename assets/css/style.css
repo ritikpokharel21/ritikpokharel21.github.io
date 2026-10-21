@@ -696,3 +696,21 @@ body.lightbox-open { overflow: hidden; }
   }
 }
 
+
+/* Mobile scroll hint: a small pill pinned to the bottom of the screen until the
+   visitor starts scrolling (the hero scroll badge is desktop-only). */
+.scroll-hint { display: none; }
+@media (max-width: 768px) {
+  .south-scroll { display: none; }
+  .scroll-hint {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
+    z-index: 60; padding: 0.55rem 0.95rem; border-radius: 999px;
+    color: var(--muted); font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
+    animation: hint-bob 2.2s ease-in-out infinite;
+    transition: opacity 0.35s ease;
+  }
+  .scroll-hint.gone { opacity: 0; pointer-events: none; }
+}
+@keyframes hint-bob { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .scroll-hint { animation: none; } }

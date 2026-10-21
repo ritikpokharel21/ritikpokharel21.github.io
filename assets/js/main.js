@@ -361,4 +361,17 @@
       }
     });
   })();
+/* Mobile scroll hint: fade it away for good once the visitor starts scrolling */
+  (function () {
+    var hint = document.getElementById("scrollHint");
+    if (!hint) return;
+    function onScroll() {
+      if (window.scrollY > 40) {
+        hint.classList.add("gone");
+        window.removeEventListener("scroll", onScroll);
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
 })();

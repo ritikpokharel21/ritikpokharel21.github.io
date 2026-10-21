@@ -539,17 +539,32 @@ img[data-placeholder="true"] { opacity: 0.92; }
 .workflow-figure.tall img { max-width: 620px; margin: 0 auto; }
 
 /* Project switcher tabs (on project pages) */
+.project-tabs-wrap {
+  position: relative;
+  width: fit-content; max-width: 100%; margin: 0 auto 2.2rem;
+  border-radius: 999px; overflow: hidden;
+  box-shadow: 0 6px 22px rgb(15 23 42 / 0.12);
+}
+.project-tabs-wrap::before, .project-tabs-wrap::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 30px; z-index: 2;
+  pointer-events: none; transition: opacity 0.25s ease;
+}
+.project-tabs-wrap::before { left: 0; background: linear-gradient(to right, var(--bg) 15%, transparent); }
+.project-tabs-wrap::after { right: 0; background: linear-gradient(to left, var(--bg) 15%, transparent); }
+.project-tabs-wrap.at-start::before { opacity: 0; }
+.project-tabs-wrap.at-end::after { opacity: 0; }
 .project-tabs {
   display: flex; gap: 0.3rem; justify-content: flex-start;
-  width: fit-content; max-width: 100%; margin: 0 auto 2.2rem; padding: 0.4rem 0.55rem;
-  border-radius: 999px; overflow-x: auto; scrollbar-width: none;
-  box-shadow: 0 6px 22px rgb(15 23 42 / 0.12);
+  padding: 0.4rem 0.55rem;
+  overflow-x: auto; scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
 }
 .project-tabs::-webkit-scrollbar { display: none; }
 .ptab {
   font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.05em; white-space: nowrap;
   padding: 0.55em 1.05em; border-radius: 999px; color: var(--muted); text-decoration: none;
-  flex: none;
+  flex: none; scroll-snap-align: center;
 }
 .ptab:hover { color: var(--ink); text-decoration: none; }
 .ptab.active { background: var(--accent); color: #fff; font-weight: 500; }

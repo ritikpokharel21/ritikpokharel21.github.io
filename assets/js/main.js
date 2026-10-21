@@ -28,16 +28,30 @@
     });
   }
 
-  /* Project tabs: center the active tab on load so it is visible on small screens */
+  /* Project tabs: center the active tab inside the tab bar on load, and fade the
+     edge hints as the bar is scrolled so it is obvious the bar scrolls sideways. */
   (function () {
-    var active = document.querySelector(".ptab.active");
-    if (!active) return;
+    var scroller = document.querySelector(".project-tabs");
+    var wrap = document.querySelector(".project-tabs-wrap");
+    if (!scroller) return;
+    var active = scroller.querySelector(".ptab.active");
     function center() {
-      try { active.scrollIntoView({ block: "nearest", inline: "center" }); } catch (e) {}
+      if (!active) return;
+      var r = active.getBoundingClientRect();
+      var s = scroller.getBoundingClientRect();
+      var target = scroller.scrollLeft + (r.left - s.left) - (scroller.clientWidth - active.offsetWidth) / 2;
+      scroller.scrollLeft = Math.max(0, target);
+    }
+    function fades() {
+      if (!wrap) return;
+      wrap.classList.toggle("at-start", scroller.scrollLeft <= 4);
+      wrap.classList.toggle("at-end", scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 4);
     }
     center();
-    window.addEventListener("load", center);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(center);
+    fades();
+    window.addEventListener("load", function () { center(); fades(); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { center(); fades(); });
+    scroller.addEventListener("scroll", fades, { passive: true });
   })();
 
   /* Certificate lightbox: click a certificate to view it in place; click outside, the close button, or ESC to dismiss */

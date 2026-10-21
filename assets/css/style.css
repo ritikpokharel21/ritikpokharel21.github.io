@@ -253,7 +253,7 @@ html[data-theme="light"] .btn-secondary { color: var(--accent-text); }
 html[data-theme="dark"] .btn-secondary { color: var(--accent-text); }
 .btn-secondary:hover { text-decoration: none; transform: translateY(-1px); }
 .hero-social { display: flex; gap: 1rem; justify-content: center; }
-.hero-social a {
+.hero-social a { position: relative;
   width: 48px; height: 48px; border-radius: 50%;
   color: var(--ink); display: inline-flex; align-items: center; justify-content: center;
   box-shadow: 0 6px 20px rgb(15 23 42 / 0.1);
@@ -408,7 +408,7 @@ img[data-placeholder="true"] { opacity: 0.92; }
 /* Contact */
 .contact-inner { text-align: center; max-width: 820px; }
 .contact-inner .section-lede { margin-left: auto; margin-right: auto; }
-.contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.2rem; text-align: left; }
+.contact-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-top: 2.2rem; text-align: left; max-width: 760px; margin-left: auto; margin-right: auto; }
 .contact-card {
   display: flex; gap: 1rem; align-items: flex-start;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -615,3 +615,32 @@ body.lightbox-open { overflow: hidden; }
 /* CV viewer page */
 .cv-frame { width: 100%; height: 74vh; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); display: block; }
 .cv-actions { text-align: center; margin: 1.4rem 0 3rem; }
+
+/* Hero social icons: name tooltip above the icon on desktop hover */
+@media (hover: hover) and (min-width: 769px) {
+  .hero-social a::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    padding: 0.32rem 0.65rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    box-shadow: var(--shadow);
+    z-index: 40;
+  }
+  .hero-social a:hover::after, .hero-social a:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

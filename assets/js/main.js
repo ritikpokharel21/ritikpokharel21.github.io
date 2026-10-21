@@ -335,4 +335,30 @@
       }
     });
   })();
+/* Share button: native share sheet when available; otherwise copy the page link
+     and flash a "Link copied" tooltip. */
+  (function () {
+    var btn = document.getElementById("shareBtn");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var url = window.location.href;
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: url }).catch(function () {});
+        return;
+      }
+      function copied() {
+        btn.setAttribute("data-tip", "Link copied");
+        btn.classList.add("tip-show");
+        setTimeout(function () {
+          btn.classList.remove("tip-show");
+          btn.setAttribute("data-tip", "Share");
+        }, 1600);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(copied, copied);
+      } else {
+        copied();
+      }
+    });
+  })();
 })();

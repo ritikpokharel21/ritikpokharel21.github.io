@@ -259,7 +259,47 @@ html[data-theme="dark"] .btn-secondary { color: var(--accent-text); }
   box-shadow: 0 6px 20px rgb(15 23 42 / 0.1);
 }
 .hero-social a:hover { color: var(--accent-text); }
-.north-divider { display: flex; justify-content: center; margin-top: 3.2rem; color: var(--muted); opacity: 0.65; }
+.share-btn {
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 999px;
+  width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  color: var(--ink); cursor: pointer; flex: none;
+}
+.nav .share-btn { background: rgb(127 140 155 / 0.16); border: 1px solid transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.share-btn:hover { color: var(--accent-text); }
+/* South scroll cue at the end of the hero: a compass-style badge pointing down */
+.south-scroll {
+  display: flex; flex-direction: column; align-items: center; gap: 0.55rem;
+  margin-top: 3.2rem; color: var(--muted); text-decoration: none;
+}
+.south-scroll:hover { color: var(--ink); text-decoration: none; }
+.south-badge {
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--surface);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+  box-shadow: var(--shadow);
+  animation: south-bob 2.4s ease-in-out infinite;
+}
+.south-letter { font-size: 0.8rem; font-weight: 700; line-height: 1; }
+.south-word { font-size: 0.68rem; letter-spacing: 0.34em; text-indent: 0.34em; text-transform: uppercase; }
+@keyframes south-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+@media (prefers-reduced-motion: reduce) { .south-badge { animation: none; } }
+/* Generic name tooltip (Share button): pill above the control on desktop hover */
+[data-tip] { position: relative; }
+[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute; bottom: calc(100% + 10px); left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line);
+  padding: 0.32rem 0.65rem; border-radius: 8px;
+  font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; line-height: 1;
+  white-space: nowrap; opacity: 0; pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  box-shadow: var(--shadow); z-index: 60;
+}
+@media (hover: hover) and (min-width: 769px) {
+  [data-tip]:hover::after, [data-tip]:focus-visible::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+[data-tip].tip-show::after { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 /* About */
 .about-grid { display: grid; grid-template-columns: 250px 1fr; gap: 2.5rem; align-items: start; margin-top: 1.5rem; }
